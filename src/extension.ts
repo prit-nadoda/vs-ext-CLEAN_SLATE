@@ -1,26 +1,47 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import { removeCSharpComments, removeJavaComments, removeJavaScriptComments, removePythonComments } from './utils';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+
 export function activate(context: vscode.ExtensionContext) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "cleanslate" is now active!');
+    let disposable = vscode.commands.registerCommand('cleanslate.cleanSelection', () => {
+        const editor = vscode.window.activeTextEditor;
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('cleanslate.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from CleanSlate!');
-	});
+        if (editor) {
+            const selection = editor.selection;
+            const text = editor.document.getText(selection);
 
-	context.subscriptions.push(disposable);
+            const language = getLanguage(editor.document);
+            const cleanedText = cleanComments(text, language);
+
+            editor.edit(editBuilder => {
+                editBuilder.replace(selection, cleanedText);
+            });
+        }
+    });
+
+    context.subscriptions.push(disposable);
 }
 
-// This method is called when your extension is deactivated
 export function deactivate() {}
+
+function getLanguage(document: vscode.TextDocument): string {
+    return document.languageId;
+}
+
+function cleanComments(text: string, language: string): string {
+    switch (language) {
+        case 'javascript':
+        case 'typescript':
+            return removeJavaScriptComments(text);
+        case 'python':
+            return removePythonComments(text);
+        case 'java':
+            return removeJavaComments(text);
+        case 'csharp':
+            return removeCSharpComments(text);
+        default:
+            return text; 
+    }
+}
+

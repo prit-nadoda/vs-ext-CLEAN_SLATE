@@ -1,16 +1,17 @@
 {
 	"compilerOptions": {
-		"module": "Node16",
-		"target": "ES2022",
-		"lib": [
-			"ES2022"
-		],
-		"sourceMap": true,
-		"rootDir": "src",
-		"strict": true   /* enable all strict type-checking options */
-		/* Additional Checks */
-		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
-	}
-}
+	  "module": "Node16",                    /* Module system used by the code */
+	  "target": "ES2022",                    /* Modern JavaScript syntax */
+	  "lib": [
+		"ES2022"                             /* Use the ES2022 library for global objects and features */
+	  ],
+	  "sourceMap": true,                     /* Enable source maps for debugging */
+	  "rootDir": "src",                      /* Source files are in the 'src' directory */
+	  "strict": true,                        /* Enable all strict type-checking options */
+	  "esModuleInterop": true,               /* Allow compatibility with CommonJS modules */
+	  "skipLibCheck": true                   /* Skip type checking of declaration files */
+	},
+	"include": ["src/**/*.ts"],               /* Include all TypeScript files under 'src' */
+	"exclude": ["node_modules"]               /* Exclude 'node_modules' */
+  }
+  

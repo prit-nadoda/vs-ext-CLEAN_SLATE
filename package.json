@@ -9,16 +9,26 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:cleanslate.cleanSelection"  
+],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
-      {
-        "command": "cleanslate.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
+        {
+            "command": "cleanslate.cleanSelection",
+            "title": "Clean selection with CleanSlate"
+        }
+    ],
+    "menus": {
+        "editor/context": [
+            {
+                "command": "cleanslate.cleanSelection",
+                "when": "editorHasSelection"
+            }
+        ]
+    }
+},
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",

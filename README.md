@@ -1,71 +1,78 @@
-# cleanslate README
 
-This is the README for your extension "cleanslate". After writing up a brief description, we recommend including the following sections.
+# CleanSlate - VS Code Extension
+
+## Overview
+
+**CleanSlate** is a powerful Visual Studio Code extension designed to automatically clean and remove comments from source code while maintaining the integrity of the code structure. It ensures that only comments are removed, leaving the rest of the code untouched, and prevents unwanted blank lines or formatting issues. With CleanSlate, developers can clean up their code in seconds and keep the workspace organized.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Comment Removal**: Removes both single-line (`//`) and multi-line (`/* */`) comments from code.
+- **Cross-Language Support**: Works with multiple programming languages, including JavaScript, TypeScript, Python, Java, and C#.
+- **Preserve Code Structure**: Retains all the code structure while removing comments. Empty lines created by comment removal are consolidated into a single blank line to avoid unnecessary gaps.
+- **Efficient**: The extension works seamlessly with large code files, offering quick performance.
 
-For example if there is an image subfolder under your extension project workspace:
+## Supported Languages
 
-\!\[feature X\]\(images/feature-x.png\)
+- **JavaScript**
+- **TypeScript**
+- **Python**
+- **Java**
+- **C#**
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Installation
 
-## Requirements
+1. Open **Visual Studio Code**.
+2. Navigate to the **Extensions** view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+3. Search for **CleanSlate**.
+4. Click **Install** to install the extension.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Alternatively, you can install it via the command line:
 
-## Extension Settings
+```bash
+code --install-extension cleanslate
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Usage
 
-For example:
+### Clean Selected Text
 
-This extension contributes the following settings:
+1. **Select the text** you want to clean from the editor.
+2. **Run the Command**: Press `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (Mac) to open the Command Palette.
+3. Type `CleanSlate: Clean Selection` and hit Enter.
+4. The selected text will be cleaned of comments, and any resulting empty lines will be replaced with a single blank line.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### Clean Entire Document
 
-## Known Issues
+1. **Select the entire document** or use the "Select All" feature (`Ctrl + A` / `Cmd + A`).
+2. **Run the Command**: Press `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (Mac) to open the Command Palette.
+3. Type `CleanSlate: Clean Selection` and hit Enter.
+4. The document will be cleaned of comments and formatted as described.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## How It Works
 
-## Release Notes
+- **Comment Detection**: The extension uses regular expressions to detect single-line comments (e.g., `//`) and multi-line comments (e.g., `/* */`) in supported languages.
+- **Comment Removal**: The comments are completely removed from the code, including inline comments and block comments.
+- **Empty Line Handling**: After comment removal, the extension ensures there are no multiple consecutive empty lines. It consolidates them into a single blank line, preserving the structure of the code.
 
-Users appreciate release notes as you update your extension.
+## Contributing
 
-### 1.0.0
+We welcome contributions to CleanSlate! If you have any ideas for new features, improvements, or bug fixes, feel free to:
 
-Initial release of ...
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature/your-feature`).
+6. Create a new Pull Request.
 
-### 1.0.1
+Please ensure that your code follows the existing style conventions and passes any relevant tests.
 
-Fixed issue #.
+## License
 
-### 1.1.0
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Added features X, Y, and Z.
+## Acknowledgements
 
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- [VS Code API](https://code.visualstudio.com/api) for providing a powerful extension framework.
+- Regular expressions for handling comment patterns and cleaning.
