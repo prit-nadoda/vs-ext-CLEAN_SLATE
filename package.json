@@ -18,7 +18,7 @@
     "commands": [
         {
             "command": "cleanslate.cleanSelection",
-            "title": "Clean selection with CleanSlate"
+            "title": "Clean selection with KleanSlate"
         }
     ],
     "menus": {

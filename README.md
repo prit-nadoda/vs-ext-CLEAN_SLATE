@@ -1,9 +1,9 @@
 
-# CleanSlate - VS Code Extension
+# KleanSlate - VS Code Extension
 
 ## Overview
 
-**CleanSlate** is a powerful Visual Studio Code extension designed to automatically clean and remove comments from source code while maintaining the integrity of the code structure. It ensures that only comments are removed, leaving the rest of the code untouched, and prevents unwanted blank lines or formatting issues. With CleanSlate, developers can clean up their code in seconds and keep the workspace organized.
+**KleanSlate** is a powerful Visual Studio Code extension designed to automatically clean and remove comments from source code while maintaining the integrity of the code structure. It ensures that only comments are removed, leaving the rest of the code untouched, and prevents unwanted blank lines or formatting issues. With KleanSlate, developers can clean up their code in seconds and keep the workspace organized.
 
 ## Features
 
@@ -24,13 +24,13 @@
 
 1. Open **Visual Studio Code**.
 2. Navigate to the **Extensions** view by clicking on the Extensions icon in the Activity Bar on the side of the window.
-3. Search for **CleanSlate**.
+3. Search for **KleanSlate**.
 4. Click **Install** to install the extension.
 
 Alternatively, you can install it via the command line:
 
 ```bash
-code --install-extension cleanslate
+code --install-extension KleanSlate
 ```
 
 ## Usage
@@ -39,14 +39,14 @@ code --install-extension cleanslate
 
 1. **Select the text** you want to clean from the editor.
 2. **Run the Command**: Press `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (Mac) to open the Command Palette.
-3. Type `CleanSlate: Clean Selection` and hit Enter.
+3. Type `KleanSlate: Clean Selection` and hit Enter.
 4. The selected text will be cleaned of comments, and any resulting empty lines will be replaced with a single blank line.
 
 ### Clean Entire Document
 
 1. **Select the entire document** or use the "Select All" feature (`Ctrl + A` / `Cmd + A`).
 2. **Run the Command**: Press `Ctrl + Shift + P` (Windows/Linux) or `Cmd + Shift + P` (Mac) to open the Command Palette.
-3. Type `CleanSlate: Clean Selection` and hit Enter.
+3. Type `KleanSlate: Clean Selection` and hit Enter.
 4. The document will be cleaned of comments and formatted as described.
 
 ## How It Works
@@ -57,7 +57,7 @@ code --install-extension cleanslate
 
 ## Contributing
 
-We welcome contributions to CleanSlate! If you have any ideas for new features, improvements, or bug fixes, feel free to:
+We welcome contributions to KleanSlate! If you have any ideas for new features, improvements, or bug fixes, feel free to:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature`).
