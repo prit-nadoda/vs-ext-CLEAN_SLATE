@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 import { removeCSharpComments, removeJavaComments, removeJavaScriptComments, removePythonComments } from './utils';
 
-
 export function activate(context: vscode.ExtensionContext) {
 
     let disposable = vscode.commands.registerCommand('cleanslate.cleanSelection', () => {
@@ -10,10 +9,8 @@ export function activate(context: vscode.ExtensionContext) {
         if (editor) {
             const selection = editor.selection;
             const text = editor.document.getText(selection);
-
             const language = getLanguage(editor.document);
             const cleanedText = cleanComments(text, language);
-
             editor.edit(editBuilder => {
                 editBuilder.replace(selection, cleanedText);
             });
@@ -41,7 +38,8 @@ function cleanComments(text: string, language: string): string {
         case 'csharp':
             return removeCSharpComments(text);
         default:
-            return text; 
+            return text;
     }
 }
+
 
