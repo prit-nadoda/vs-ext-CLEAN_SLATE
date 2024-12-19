@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { removeCSharpComments, removeJavaComments, removeJavaScriptComments, removePythonComments } from './utils';
+import { removeCSharpComments, removeJavaComments, removeJavaScriptComments, removePythonComments, removeJSXComments } from './utils';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -31,6 +31,9 @@ function cleanComments(text: string, language: string): string {
         case 'javascript':
         case 'typescript':
             return removeJavaScriptComments(text);
+        case 'javascriptreact':
+        case 'typescriptreact':
+            return removeJSXComments(text);
         case 'python':
             return removePythonComments(text);
         case 'java':

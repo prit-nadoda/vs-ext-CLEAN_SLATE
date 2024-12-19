@@ -1,4 +1,3 @@
-
 # KleanSlate - VS Code Extension
 
 ## Overview
@@ -14,11 +13,18 @@
 
 ## Supported Languages
 
-- **JavaScript**
-- **TypeScript**
-- **Python**
-- **Java**
-- **C#**
+### Programming Languages
+- JavaScript
+- TypeScript
+- Python
+- Java
+- C#
+
+### Frameworks & Extensions
+- JSX (React)
+- TSX (React with TypeScript)
+- JavaScript React
+- TypeScript React
 
 ## Installation
 
