@@ -2,7 +2,7 @@
   "name": "kleanslate",
   "displayName": "KleanSlate",
   "description": "Remove all comments from the selected code with a single click.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "assets/icon.png",
   "engines": {
     "vscode": "^1.96.0"
