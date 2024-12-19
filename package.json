@@ -2,7 +2,7 @@
   "name": "kleanslate",
   "displayName": "KleanSlate",
   "description": "Remove all comments from the selected code with a single click.",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "icon": "assets/icon.png",
   "engines": {
     "vscode": "^1.96.0"
@@ -25,7 +25,8 @@
         "editor/context": [
             {
                 "command": "cleanslate.cleanSelection",
-                "when": "editorHasSelection"
+                "when": "editorHasSelection",
+                "group": "1_modification"
             }
         ]
     }

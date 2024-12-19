@@ -4,6 +4,12 @@
 
 **KleanSlate** is a powerful Visual Studio Code extension designed to automatically clean and remove comments from source code while maintaining the integrity of the code structure. It ensures that only comments are removed, leaving the rest of the code untouched, and prevents unwanted blank lines or formatting issues. With KleanSlate, developers can clean up their code in seconds and keep the workspace organized.
 
+## Demo
+
+![KleanSlate Demo](assets/demo.gif)
+
+*Note: If you're viewing this on VS Code Marketplace and the GIF isn't visible, you can view the demo video [here](https://github.com/prit-nadoda/vs-ext-injectify/blob/main/assets/demo.mp4).*
+
 ## Features
 
 - **Comment Removal**: Removes both single-line (`//`) and multi-line (`/* */`) comments from code.
