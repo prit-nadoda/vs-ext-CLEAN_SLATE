@@ -8,6 +8,7 @@
 
 ![KleanSlate Demo](assets/demo.mp4)
 
+*Note: If you're viewing this on VS Code Marketplace and the GIF isn't visible, you can view the demo video [here](https://github.com/prit-nadoda/vs-ext-injectify/blob/main/assets/demo.mp4).*
 
 ## Features
 
