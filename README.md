@@ -8,7 +8,7 @@
 
 ![KleanSlate Demo](assets/demo.mp4)
 
-*Note: If you're viewing this on VS Code Marketplace and the GIF isn't visible, you can view the demo video [here](https://github.com/prit-nadoda/vs-ext-injectify/blob/main/assets/demo.mp4).*
+*Note: If you're viewing this on VS Code Marketplace and the GIF isn't visible, you can view the demo video [here](https://github.com/prit-nadoda/vs-ext-CLEAN_SLATE/blob/master/assets/demo.mp4).*
 
 ## Features
 
@@ -16,6 +16,12 @@
 - **Cross-Language Support**: Works with multiple programming languages, including JavaScript, TypeScript, Python, Java, and C#.
 - **Preserve Code Structure**: Retains all the code structure while removing comments. Empty lines created by comment removal are consolidated into a single blank line to avoid unnecessary gaps.
 - **Efficient**: The extension works seamlessly with large code files, offering quick performance.
+- **Smart Content Preservation**: Intelligently preserves:
+  - URLs (http://, https://, file://)
+  - String literals containing comment-like patterns
+  - Regular expressions
+  - File paths
+  - Code structure and formatting
 
 ## Supported Languages
 
@@ -25,12 +31,16 @@
 - Python
 - Java
 - C#
+- C/C++
+- Scala
 
 ### Frameworks & Extensions
 - JSX (React)
 - TSX (React with TypeScript)
 - JavaScript React
 - TypeScript React
+- JSON/JSONC
+- Jupyter Notebooks
 
 ## Installation
 
@@ -64,8 +74,19 @@ code --install-extension KleanSlate
 ## How It Works
 
 - **Comment Detection**: The extension uses regular expressions to detect single-line comments (e.g., `//`) and multi-line comments (e.g., `/* */`) in supported languages.
+- **Smart Content Preservation**: Before removing comments, the extension:
+  1. Identifies and preserves URLs and file paths
+  2. Protects string literals containing comment-like patterns
+  3. Preserves regular expressions and other special patterns
 - **Comment Removal**: The comments are completely removed from the code, including inline comments and block comments.
 - **Empty Line Handling**: After comment removal, the extension ensures there are no multiple consecutive empty lines. It consolidates them into a single blank line, preserving the structure of the code.
+- **Error Handling**: The extension includes comprehensive error handling and user feedback for various scenarios.
+
+## Known Limitations
+
+- The extension requires text selection to operate. If no text is selected, it will prompt you to make a selection.
+- Some languages might have unique comment patterns that are not yet supported.
+- In rare cases with extremely complex nested comments or special patterns, manual review might be needed.
 
 ## Contributing
 
